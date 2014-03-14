@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import com.rodriguezst.farmacia.ItemContainer;
 
-import android.R.color;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -51,10 +51,11 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 		mListView = (ListView) findViewById(R.id.list_view);
 		mSearchView = (SearchView) findViewById(R.id.search_view);
 		
-		int id = mSearchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-		TextView textView = (TextView) mSearchView.findViewById(id);
-		textView.setTextColor(Color.WHITE);
-		textView.setHintTextColor(Color.LTGRAY);
+//		SearchView style changes disabled and added background instead
+//		int id = mSearchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+//		TextView textView = (TextView) mSearchView.findViewById(id);
+//		textView.setTextColor(Color.WHITE);
+//		textView.setHintTextColor(Color.LTGRAY);
 		
 		readDatabase();
 		
@@ -161,7 +162,7 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 				ItemContainer item = mDatabase.get(position);
 				if(item!=null){
 					mTextView.setText(item.getName());
-					mTextView.setTextColor(Color.LTGRAY);
+					mTextView.setTextColor(Color.WHITE);
 				}
 			}
 			
