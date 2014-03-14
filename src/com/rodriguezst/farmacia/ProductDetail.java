@@ -1,11 +1,10 @@
 package com.rodriguezst.farmacia;
 
-import com.rodriguezst.farmacia.ItemContainer;
-
 import android.os.Bundle;
 import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 //import android.view.Menu;
 
 public class ProductDetail extends Activity {
@@ -22,7 +21,9 @@ public class ProductDetail extends Activity {
 		TextView mTextViewName = (TextView) findViewById(R.id.prod_name);
 		TextView mTextViewId = (TextView) findViewById(R.id.prod_id);
 		mTextViewName.setText("Item Name: " + mItemName);
+		mTextViewName.setTextColor(Color.LTGRAY);
 		mTextViewId.setText("Item ID: " + Integer.toString(mItemId));
+		mTextViewId.setTextColor(Color.LTGRAY);
 	}
 
 /*	@Override
