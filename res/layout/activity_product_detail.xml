@@ -98,7 +98,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="@string/info1"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:background="@drawable/button_left_selector"
+            android:layout_margin="0dp"/>
 
         <Button
             android:id="@+id/button2"
@@ -106,7 +108,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="@string/info2"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:background="@drawable/button_right_selector"
+            android:layout_margin="0dp"/>
     </view>
 
 </RelativeLayout>

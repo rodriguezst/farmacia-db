@@ -53,14 +53,19 @@ public class ProductDetail extends Activity {
 		button1 = (Button) findViewById(R.id.button1);
 		button2 = (Button) findViewById(R.id.button2);
 		
-		//button1.setSelected(true);
+		button2.setSelected(false);
+		button1.setSelected(true);
+		button1.setTextColor(Color.BLACK);
+		button2.setTextColor(Color.WHITE);
 		
 		button1.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//button2.setSelected(false);
-				//button1.setSelected(true);
+				button2.setSelected(false);
+				button1.setSelected(true);
+				button1.setTextColor(Color.BLACK);
+				button2.setTextColor(Color.WHITE);
 				
 				mTextViewInfo.setText(mItemInfo1);
 				mTextViewDivider.setText(R.string.info1);
@@ -72,8 +77,10 @@ public class ProductDetail extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				//button1.setSelected(false);
-				//button2.setSelected(true);
+				button1.setSelected(false);
+				button2.setSelected(true);
+				button2.setTextColor(Color.BLACK);
+				button1.setTextColor(Color.WHITE);
 				
 				mTextViewInfo.setText(mItemInfo2);
 				mTextViewDivider.setText(R.string.info2);
