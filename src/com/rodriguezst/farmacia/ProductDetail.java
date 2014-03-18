@@ -1,6 +1,7 @@
 package com.rodriguezst.farmacia;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class ProductDetail extends Activity {
 	
 	private Button button1;
 	private Button button2;
+	
+	private int state;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +56,37 @@ public class ProductDetail extends Activity {
 		button1 = (Button) findViewById(R.id.button1);
 		button2 = (Button) findViewById(R.id.button2);
 		
-		button2.setSelected(false);
-		button1.setSelected(true);
-		button1.setTextColor(Color.BLACK);
-		button2.setTextColor(Color.WHITE);
+		if (savedInstanceState != null) {
+	        state = savedInstanceState.getInt("state");
+	        Log.i("Carlos", Integer.toString(state));
+	    }else{
+	    	state=0;
+	    }
+		
+		if(state==0){
+			
+			button2.setSelected(false);
+			button1.setSelected(true);
+			button1.setTextColor(Color.BLACK);
+			button2.setTextColor(Color.WHITE);
+			
+		}else{
+			
+			button2.setSelected(true);
+			button1.setSelected(false);
+			button1.setTextColor(Color.WHITE);
+			button2.setTextColor(Color.BLACK);
+			mTextViewInfo.setText(mItemInfo2);
+			mTextViewDivider.setText(R.string.info2);
+			
+		}
 		
 		button1.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
+				state=0;
+				
 				button2.setSelected(false);
 				button1.setSelected(true);
 				button1.setTextColor(Color.BLACK);
@@ -77,6 +102,8 @@ public class ProductDetail extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				state=1;
+				
 				button1.setSelected(false);
 				button2.setSelected(true);
 				button2.setTextColor(Color.BLACK);
@@ -88,6 +115,11 @@ public class ProductDetail extends Activity {
 			}
 		});
 		
+	}
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+	     savedInstanceState.putInt("state", state);
+	    super.onSaveInstanceState(savedInstanceState);
 	}
 
 /*	@Override
