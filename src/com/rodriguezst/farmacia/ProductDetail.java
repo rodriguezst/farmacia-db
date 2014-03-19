@@ -48,13 +48,13 @@ public class ProductDetail extends Activity {
 		mTextViewName.setTextColor(Color.WHITE);
 		mTextViewId.setText("Item ID: " + Integer.toString(mItemId));
 		mTextViewId.setTextColor(Color.WHITE);
-		mTextViewInfo.setText(mItemInfo1);
 		mTextViewInfo.setTextColor(Color.WHITE);
-		mTextViewDivider.setText(R.string.info1);
 		mTextViewDivider.setTextColor(Color.WHITE);
 		
 		button1 = (Button) findViewById(R.id.button1);
 		button2 = (Button) findViewById(R.id.button2);
+		
+		mTextViewInfo.setLineSpacing(0f,1.3f);
 		
 		if (savedInstanceState != null) {
 	        state = savedInstanceState.getInt("state");
@@ -63,14 +63,16 @@ public class ProductDetail extends Activity {
 	    	state=0;
 	    }
 		
-		if(state==0){
+		if(state==0 && !button1.isSelected()){
 			
 			button2.setSelected(false);
 			button1.setSelected(true);
 			button1.setTextColor(Color.BLACK);
 			button2.setTextColor(Color.WHITE);
+			mTextViewInfo.setText(mItemInfo1);
+			mTextViewDivider.setText(R.string.info1);
 			
-		}else{
+		}else if (!button2.isSelected()){
 			
 			button2.setSelected(true);
 			button1.setSelected(false);
