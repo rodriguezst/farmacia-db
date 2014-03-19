@@ -14,13 +14,13 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:text="@string/title_string"
         android:textColor="@android:color/white"
-        android:textSize="45sp"
-        android:fontFamily="sans-serif-thin" />
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginLeft="20dp" />
 
 
     <view
@@ -47,11 +47,11 @@
         android:id="@+id/footer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
         class="LinearLayout"
-        android:orientation="horizontal"
-        android:layout_marginBottom="40dp" >
+        android:orientation="vertical"
+        android:layout_marginRight="20dp" >
         
         <ImageView
             android:id="@+id/twitter"
