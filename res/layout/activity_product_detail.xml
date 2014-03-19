@@ -28,7 +28,8 @@
         android:gravity="center_horizontal"
         android:text="@string/default_string"
         android:textAlignment="center"
-            android:textSize="16sp" />
+		android:textSize="16sp"
+		android:fontFamily="sans-serif-light" />
 
     <view
         android:id="@+id/dividers"
@@ -37,7 +38,8 @@
         android:layout_below="@+id/prod_name"
         android:layout_centerHorizontal="true"
         class="LinearLayout"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_margin="5dp" >
 
         <View
             android:id="@+id/divider1"
@@ -55,7 +57,8 @@
             android:layout_below="@+id/dividers"
             android:layout_centerHorizontal="true"
             android:text="@string/info1" 
-            android:textSize="14sp" />
+            android:textSize="14sp"
+			android:fontFamily="sans-serif-light" />
 
         <View
             android:id="@+id/divider2"
@@ -80,7 +83,8 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/default_string" 
-            android:textSize="16sp" />
+            android:textSize="16sp"
+			android:fontFamily="sans-serif-light" />
 	</ScrollView>
 
     <view
@@ -100,7 +104,8 @@
             android:text="@string/info1"
             android:textSize="14sp"
             android:background="@drawable/button_left_selector"
-            android:layout_margin="0dp"/>
+            android:layout_margin="0dp"
+			android:fontFamily="sans-serif-light" />
 
         <Button
             android:id="@+id/button2"
@@ -110,7 +115,8 @@
             android:text="@string/info2"
             android:textSize="14sp"
             android:background="@drawable/button_right_selector"
-            android:layout_margin="0dp"/>
+            android:layout_margin="0dp"
+			android:fontFamily="sans-serif-light" />
     </view>
 
 </RelativeLayout>

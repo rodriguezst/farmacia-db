@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
@@ -169,6 +170,7 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 					mTextView.setText(item.getName());
 					mTextView.setTextColor(Color.WHITE);
 					mTextView.setLines(3);
+					mTextView.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
 				}
 			}
 			
