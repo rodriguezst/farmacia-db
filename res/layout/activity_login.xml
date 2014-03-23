@@ -42,6 +42,32 @@
 	        android:layout_margin="40dp"/>
         
     </view>
+    
+    <view
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        class="LinearLayout"
+        android:orientation="horizontal"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="10dp" >
+        
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_search" />
+        <TextView
+	        android:id="@+id/map_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/map_text_string"
+	        android:textColor="@android:color/white"
+	        android:textSize="16sp"
+	        android:fontFamily="sans-serif-thin" />
+    </view>
+        
 
     <view
         android:id="@+id/footer"

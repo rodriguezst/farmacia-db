@@ -8,6 +8,7 @@ import org.json.JSONException;
 import com.rodriguezst.farmacia.ItemContainer;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -21,6 +22,7 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +52,8 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		Toast.makeText(getApplicationContext(),R.string.loading_text, Toast.LENGTH_LONG).show();
+		
 		mListView = (ListView) findViewById(R.id.list_view);
 		mSearchView = (SearchView) findViewById(R.id.search_view);
 		
@@ -59,24 +63,8 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 //		textView.setTextColor(Color.WHITE);
 //		textView.setHintTextColor(Color.LTGRAY);
 		
-		readDatabase();
-		
-		//mListView.setTextFilterEnabled(true);
-		mArrayAdapter = new ItemAdapter(this,android.R.layout.simple_list_item_1, mDatabase);
-		mFilter = mArrayAdapter.getFilter();
-		mListView.setAdapter(mArrayAdapter);
-		
-		mSearchView.setIconifiedByDefault(false);
-        mSearchView.setOnQueryTextListener(this);
-        //mSearchView.setSubmitButtonEnabled(true); 
-		
-        mListView.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-			    // When clicked, open the selected item
-			    itemOpen(position);
-			}
-		});
+		AsyncTaskClass task = new AsyncTaskClass();
+	    task.execute();
         
 	}
 
@@ -216,6 +204,36 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 			};
 	    }
 
+	}
+	
+	private class AsyncTaskClass extends AsyncTask<Void, String, String>{
+		
+		@Override
+		protected String doInBackground(Void... params) {
+			readDatabase();
+			return null;
+		}
+		
+		@Override
+	    protected void onPostExecute(String result) {
+			//mListView.setTextFilterEnabled(true);
+			mArrayAdapter = new ItemAdapter(MainActivity.this,android.R.layout.simple_list_item_1, mDatabase);
+			mFilter = mArrayAdapter.getFilter();
+			mListView.setAdapter(mArrayAdapter);
+			
+			mSearchView.setIconifiedByDefault(false);
+	        mSearchView.setOnQueryTextListener(MainActivity.this);
+	        //mSearchView.setSubmitButtonEnabled(true); 
+			
+	        mListView.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+				    // When clicked, open the selected item
+				    itemOpen(position);
+				}
+			});
+	    }
+	
 	}
 
 }

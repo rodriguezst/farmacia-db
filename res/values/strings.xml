@@ -11,5 +11,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_string">INFARMÓN</string>
     <string name="search_button">BUSCAR</string>
+    <string name="map_text_string">Farmacias más cercanas</string>
+    <string name="loading_text">Cargando...</string>
 
 </resources>
