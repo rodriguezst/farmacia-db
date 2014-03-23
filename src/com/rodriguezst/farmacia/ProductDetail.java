@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +24,7 @@ public class ProductDetail extends Activity {
 	private TextView mTextViewInfo;
 	private TextView mTextViewDivider;
 	
+	private ScrollView mScrollView;
 	
 	private Button button1;
 	private Button button2;
@@ -50,6 +52,8 @@ public class ProductDetail extends Activity {
 		mTextViewId.setTextColor(Color.WHITE);
 		mTextViewInfo.setTextColor(Color.WHITE);
 		mTextViewDivider.setTextColor(Color.WHITE);
+		
+		mScrollView = (ScrollView) findViewById(R.id.scrollview);
 		
 		button1 = (Button) findViewById(R.id.button1);
 		button2 = (Button) findViewById(R.id.button2);
@@ -97,6 +101,8 @@ public class ProductDetail extends Activity {
 				mTextViewInfo.setText(mItemInfo1);
 				mTextViewDivider.setText(R.string.info1);
 				
+				mScrollView.smoothScrollTo(0, 0);
+				
 			}
 		});
 		
@@ -114,6 +120,7 @@ public class ProductDetail extends Activity {
 				mTextViewInfo.setText(mItemInfo2);
 				mTextViewDivider.setText(R.string.info2);
 				
+				mScrollView.smoothScrollTo(0, 0);
 			}
 		});
 		
