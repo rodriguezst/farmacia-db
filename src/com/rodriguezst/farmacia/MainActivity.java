@@ -11,6 +11,7 @@ import com.rodriguezst.farmacia.ItemContainer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -47,12 +48,12 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
     private ArrayList<ItemContainer> mDatabase;
     private ArrayList<ItemContainer> mDatabaseBackup;
 
+	private ProgressDialog progressDialog;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		Toast.makeText(getApplicationContext(),R.string.loading_text, Toast.LENGTH_LONG).show();
 		
 		mListView = (ListView) findViewById(R.id.list_view);
 		mSearchView = (SearchView) findViewById(R.id.search_view);
@@ -62,6 +63,12 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 //		TextView textView = (TextView) mSearchView.findViewById(id);
 //		textView.setTextColor(Color.WHITE);
 //		textView.setHintTextColor(Color.LTGRAY);
+		
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.setIndeterminate(true);
+		progressDialog.setMessage(getString(R.string.loading_text));
+		progressDialog.show();
 		
 		AsyncTaskClass task = new AsyncTaskClass();
 	    task.execute();
@@ -232,6 +239,8 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 				    itemOpen(position);
 				}
 			});
+	        
+	        progressDialog.dismiss();
 	    }
 	
 	}
