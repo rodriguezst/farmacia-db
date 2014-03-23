@@ -23,7 +23,6 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -176,6 +175,7 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 	    public Filter getFilter() {
 	        return new Filter() {
 				
+				@SuppressWarnings("unchecked")
 				@Override
 				protected void publishResults(CharSequence constraint, FilterResults results) {
 					if (results.count > 0) {

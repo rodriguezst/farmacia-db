@@ -71,8 +71,13 @@ public class LoginActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/infarmon"));
-				startActivity(intent);
+				try {
+				    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/523417377771324"));
+				    startActivity(intent);
+				} catch(Exception e) {
+					Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/infarmon"));
+					startActivity(intent);
+				}
 				
 			}
 		});
