@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
     private ArrayList<ItemContainer> mDatabaseBackup;
 
 	private ProgressDialog progressDialog;
+	private AsyncTaskClass task;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +71,19 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 		progressDialog.setMessage(getString(R.string.loading_text));
 		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.show();
-		
-		AsyncTaskClass task = new AsyncTaskClass();
+
+		task = new AsyncTaskClass();
 	    task.execute();
         
+	}
+	
+	@Override 
+	public void onDestroy(){
+	    super.onDestroy();
+	    task.cancel(true);
+	    progressDialog.dismiss();
+	    progressDialog=null;
+	    task=null;
 	}
 
 	
