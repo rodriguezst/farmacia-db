@@ -57,7 +57,9 @@
             android:id="@+id/map_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search" />
+            android:src="@drawable/map_button" 
+            android:scaleX="0.75"
+            android:scaleY="0.75"/>
         <TextView
 	        android:id="@+id/map_text"
 	        android:layout_width="wrap_content"
@@ -65,7 +67,8 @@
 	        android:text="@string/map_text_string"
 	        android:textColor="@android:color/white"
 	        android:textSize="16sp"
-	        android:fontFamily="sans-serif-thin" />
+	        android:fontFamily="sans-serif-thin"
+	        android:layout_gravity="center_vertical" />
     </view>
         
 
@@ -83,23 +86,29 @@
             android:id="@+id/twitter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_add"
+            android:src="@drawable/twitter_button"
 	        android:layout_gravity="center_vertical"
-	        android:layout_margin="20dp"/>
+	        android:layout_margin="20dp" 
+            android:scaleX="0.75"
+            android:scaleY="0.75"/>
         <ImageView
             android:id="@+id/facebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_today"
+            android:src="@drawable/fb_button"
 	        android:layout_gravity="center_vertical"
-	        android:layout_margin="20dp"/>
+	        android:layout_margin="20dp" 
+            android:scaleX="0.75"
+            android:scaleY="0.75"/>
         <ImageView
             android:id="@+id/mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_send"
+            android:src="@drawable/mail_button"
 	        android:layout_gravity="center_vertical"
-	        android:layout_margin="20dp"/>
+	        android:layout_margin="20dp" 
+            android:scaleX="0.75"
+            android:scaleY="0.75"/>
         
     </view>
 

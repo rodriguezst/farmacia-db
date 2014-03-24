@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.app.Activity;
 import android.content.Intent;
+import com.rodriguezst.farmacia.R;
 
 public class LoginActivity extends Activity {
 

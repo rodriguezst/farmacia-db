@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.json.JSONException;
 
 import com.rodriguezst.farmacia.ItemContainer;
+import com.rodriguezst.farmacia.R;
 
 
 import android.os.AsyncTask;
@@ -67,6 +68,7 @@ public class MainActivity extends Activity implements SearchView.OnQueryTextList
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		progressDialog.setIndeterminate(true);
 		progressDialog.setMessage(getString(R.string.loading_text));
+		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.show();
 		
 		AsyncTaskClass task = new AsyncTaskClass();
